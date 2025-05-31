@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #dbdbdb7d;
+  --foreground: #171717;
+  --color-main: #2b7fff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.animation-sound {
+  display: flex;
+  gap: 4px;
+}
+
+.animation-sound span {
+  display: block;
+  width: 5px;
+  height: 24px;
+  border-radius: 2px;
+  background: #3498db;
+  animation: sound-wave 0.4s infinite alternate linear;
+}
+
+.animation-sound span:nth-child(1) { animation-delay: 0s; }
+.animation-sound span:nth-child(2) { animation-delay: 0.1s; }
+.animation-sound span:nth-child(3) { animation-delay: 0.2s; }
+.animation-sound span:nth-child(4) { animation-delay: 0.3s; }
+.animation-sound span:nth-child(5) { animation-delay: 0.4s; }
+.animation-sound span:nth-child(6) { animation-delay: 0.5s; }
+
+@keyframes sound-wave {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(1.5); }
+}
+
+/* globals.css */
+
+
+
+
+@layer utilities {
+   .colorMain{
+     color: var(--color-blue-500);
+   }
+
+   .bgMain{
+    background-color: var(--color-blue-500);
+   }
+
+   .bgNavMain{
+      &:hover{
+        color: white;
+        background-color: var(--color-blue-500);
+      }
+   }
+}
+

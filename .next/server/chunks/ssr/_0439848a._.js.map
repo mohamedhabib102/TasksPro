@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://D%3A/My-Work/TasksPro/my-app/app/Favorite/page.js"],"sourcesContent":["\"use client\"\r\n\r\nexport default function Favorite() {\r\n    return(\r\n        <div className=\"p-3 bg-[#fff] rounded-xs relative\">\r\n        <h1 className=\"text-4xl m-5 mb-11 relative\">\r\n          <span className=\"absolute h-[3px] w-[120] -bottom-2.5 bg-[#eeee] left-0\"></span>\r\n          <span className=\"absolute h-[3px] w-[40] -bottom-2.5 bg-[#333] left-0\"></span>\r\n          Favorite\r\n        </h1>\r\n        </div>\r\n    )\r\n}"],"names":[],"mappings":";;;;AAAA;;AAEe,SAAS;IACpB,qBACI,8OAAC;QAAI,WAAU;kBACf,cAAA,8OAAC;YAAG,WAAU;;8BACZ,8OAAC;oBAAK,WAAU;;;;;;8BAChB,8OAAC;oBAAK,WAAU;;;;;;gBAA8D;;;;;;;;;;;;AAKxF","debugId":null}},
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 51, "column": 0}, "map": {"version":3,"sources":["file://D%3A/My-Work/TasksPro/my-app/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-ssr'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,4HAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0],"debugId":null}},
+    {"offset": {"line": 53, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
