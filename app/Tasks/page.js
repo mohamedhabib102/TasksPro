@@ -1,3 +1,4 @@
+import Goal from "../Components/Goal";
 import Tasks from "../Components/Tasks";
 
 export default function TasksPage() {
@@ -9,6 +10,7 @@ export default function TasksPage() {
           Tasks Page
         </h1>
         <Tasks />
+        <Goal />
         </div>
     )
 }

@@ -1,7 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
 import { FaCheck } from "react-icons/fa";
-import {FaXmark} from "react-icons/fa6";
 import {MdDelete} from "react-icons/md"
 export default function Tasks (){
     const [tasks, setTasks] = useState([])
@@ -32,6 +31,33 @@ export default function Tasks (){
 
         localStorage.setItem("tasksPro", JSON.stringify(taskDelete))
     }
+
+const handleDone = (indexEle) => {
+        const currentDateNow = new Date().toISOString();
+        
+        const isDoneTasks = localStorage.getItem("isDone");
+        const parsedIsDone = JSON.parse(isDoneTasks) || [];
+        localStorage.setItem(
+          "isDone",
+          JSON.stringify([
+            ...parsedIsDone,
+            { ...tasks[indexEle], dateTaskNow: currentDateNow }
+          ])
+        );
+        
+
+        const updatedTasks = tasks.map((task, i) => {
+          if (!task) return task;
+          return i === indexEle ? { ...task, isDone: true } : task;
+        });
+        
+   
+        setTasks(updatedTasks);
+        
+
+        localStorage.setItem("tasksPro", JSON.stringify(updatedTasks));
+};
+
     
     return (
         <div className={`p-2.5 flex flex-col gap-5`}>
@@ -61,8 +87,8 @@ export default function Tasks (){
                             i === index ? {...t, isDone: t.isDone = true} : t
                         )
                         setTasks(editTask);
-                        localStorage.setItem("tasksPro", JSON.stringify(editTask))
-                        console.log(ele);
+                        localStorage.setItem("tasksPro", JSON.stringify(editTask));
+                        handleDone(index)   
                         }}>{<FaCheck />} Done</span>
                         </div>
                         <span className="bg-main font-semibold text-[15px]">{ele.progress}%</span>

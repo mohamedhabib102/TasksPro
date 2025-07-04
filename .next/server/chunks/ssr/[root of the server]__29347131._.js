@@ -381,8 +381,7 @@ function AddTaks({ open, setOpen }) {
         time: "",
         typeTask: "",
         progress: 20,
-        isDone: false,
-        colorTask: ""
+        isDone: false
     });
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const handleChange = (e)=>{
@@ -394,7 +393,7 @@ function AddTaks({ open, setOpen }) {
     };
     const addTask = (e)=>{
         e.preventDefault();
-        if (!task.nameTask || !task.descriptionTask || !task.timeTask || !task.typeTask || !task.time || !task.colorTask) {
+        if (!task.nameTask || !task.descriptionTask || !task.timeTask || !task.typeTask || !task.time) {
             setError("You Should Fill Inputs Before Add New Task!");
             return;
         }
@@ -420,8 +419,7 @@ function AddTaks({ open, setOpen }) {
             time: "",
             typeTask: "",
             progress: 20,
-            isDone: false,
-            colorTask: ""
+            isDone: false
         });
         setOpen(!open);
     };
@@ -431,18 +429,18 @@ function AddTaks({ open, setOpen }) {
                 className: `${open ? " scale-100 opacity-100" : "scale-0 opacity-0"} w-full fixed top-0 left-0 h-full bg-[#33333393] z-50  backdrop-blur-[5px]`
             }, void 0, false, {
                 fileName: "[project]/app/Components/AddTask.jsx",
-                lineNumber: 66,
+                lineNumber: 64,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `${open ? " scale-100 opacity-100" : "scale-0 opacity-0"} fixed w-10/12 max-[991px]:w-full max-[991px]:h-full top-1/2 left-1/2 -translate-1/2 p-5 bg-[#eee] transition-all z-50`,
+                className: `${open ? " scale-100 opacity-100" : "scale-0 opacity-0"} fixed w-10/12 max-[991px]:w-full max-[991px]:h-full top-1/2 left-1/2 rounded-[8px] -translate-1/2 p-5 bg-[#eee] transition-all z-50`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IoIosCloseCircle"], {
                         onClick: ()=>setOpen(!open),
                         className: "z-50 text-4xl absolute top-6 right-6 cursor-pointer transition-all hover:opacity-85"
                     }, void 0, false, {
                         fileName: "[project]/app/Components/AddTask.jsx",
-                        lineNumber: 68,
+                        lineNumber: 66,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -457,14 +455,14 @@ function AddTaks({ open, setOpen }) {
                                         children: "Add"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 70,
+                                        lineNumber: 68,
                                         columnNumber: 85
                                     }, this),
                                     " New Task"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                lineNumber: 70,
+                                lineNumber: 68,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -476,7 +474,7 @@ function AddTaks({ open, setOpen }) {
                                         children: "Name Task"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 72,
+                                        lineNumber: 70,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -489,13 +487,13 @@ function AddTaks({ open, setOpen }) {
                                         onChange: handleChange
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 73,
+                                        lineNumber: 71,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                lineNumber: 71,
+                                lineNumber: 69,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -507,7 +505,7 @@ function AddTaks({ open, setOpen }) {
                                         children: "Description Task"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 84,
+                                        lineNumber: 82,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -520,13 +518,13 @@ function AddTaks({ open, setOpen }) {
                                         onChange: handleChange
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 85,
+                                        lineNumber: 83,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                lineNumber: 83,
+                                lineNumber: 81,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -538,7 +536,7 @@ function AddTaks({ open, setOpen }) {
                                         children: "Time Task"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 96,
+                                        lineNumber: 94,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -546,7 +544,7 @@ function AddTaks({ open, setOpen }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                 className: "bg-white p-2.5 w-full transition-all rounded-[6px] outline-none border-blue-300 focus:border-blue-400 border-[3px]",
-                                                type: "text",
+                                                type: "time",
                                                 id: "timeTask",
                                                 name: "timeTask",
                                                 placeholder: "Time Task",
@@ -554,7 +552,7 @@ function AddTaks({ open, setOpen }) {
                                                 onChange: handleChange
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                                lineNumber: 98,
+                                                lineNumber: 96,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -566,19 +564,19 @@ function AddTaks({ open, setOpen }) {
                                                 onChange: handleChange
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                                lineNumber: 107,
+                                                lineNumber: 105,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 97,
+                                        lineNumber: 95,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                lineNumber: 95,
+                                lineNumber: 93,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -590,7 +588,7 @@ function AddTaks({ open, setOpen }) {
                                         children: "Type Task"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 119,
+                                        lineNumber: 117,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -603,44 +601,13 @@ function AddTaks({ open, setOpen }) {
                                         onChange: handleChange
                                     }, void 0, false, {
                                         fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 120,
+                                        lineNumber: 118,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                lineNumber: 118,
-                                columnNumber: 17
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mb-3 relative w-full",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        htmlFor: "ColorTask",
-                                        className: "block text-left",
-                                        children: "Color Task"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 131,
-                                        columnNumber: 21
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        className: "bg-white p-2.5 w-full transition-all rounded-[6px] outline-none border-blue-300 focus:border-blue-400 border-[3px]",
-                                        type: "text",
-                                        id: "ColorTask",
-                                        name: "colorTask",
-                                        placeholder: "Color Task",
-                                        value: task.colorTask,
-                                        onChange: handleChange
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Components/AddTask.jsx",
-                                        lineNumber: 132,
-                                        columnNumber: 21
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/Components/AddTask.jsx",
-                                lineNumber: 130,
+                                lineNumber: 116,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -649,7 +616,7 @@ function AddTaks({ open, setOpen }) {
                                 children: "Add Task"
                             }, void 0, false, {
                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                lineNumber: 142,
+                                lineNumber: 127,
                                 columnNumber: 17
                             }, this),
                             error ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -657,19 +624,19 @@ function AddTaks({ open, setOpen }) {
                                 children: error
                             }, void 0, false, {
                                 fileName: "[project]/app/Components/AddTask.jsx",
-                                lineNumber: 143,
+                                lineNumber: 128,
                                 columnNumber: 27
                             }, this) : ""
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Components/AddTask.jsx",
-                        lineNumber: 69,
+                        lineNumber: 67,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Components/AddTask.jsx",
-                lineNumber: 67,
+                lineNumber: 65,
                 columnNumber: 9
             }, this)
         ]

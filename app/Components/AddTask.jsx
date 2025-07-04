@@ -10,7 +10,6 @@ export default function AddTaks({open, setOpen}) {
         typeTask: "",
         progress: 20,
         isDone: false,
-        colorTask: ""
     })
     const [error, setError] =  useState("")
 
@@ -22,7 +21,7 @@ export default function AddTaks({open, setOpen}) {
     const addTask = (e) => {
         e.preventDefault();
 
-        if (!task.nameTask || !task.descriptionTask || !task.timeTask || !task.typeTask || !task.time || !task.colorTask){
+        if (!task.nameTask || !task.descriptionTask || !task.timeTask || !task.typeTask || !task.time){
             setError("You Should Fill Inputs Before Add New Task!")
             return
         }
@@ -52,7 +51,6 @@ export default function AddTaks({open, setOpen}) {
             typeTask: "",
             progress: 20,
             isDone: false,
-            colorTask: ""
         })
 
 
@@ -64,7 +62,7 @@ export default function AddTaks({open, setOpen}) {
     return(
         <>
         <div className={`${open ? " scale-100 opacity-100": "scale-0 opacity-0"} w-full fixed top-0 left-0 h-full bg-[#33333393] z-50  backdrop-blur-[5px]`}></div>
-        <div className={`${open ? " scale-100 opacity-100": "scale-0 opacity-0"} fixed w-10/12 max-[991px]:w-full max-[991px]:h-full top-1/2 left-1/2 -translate-1/2 p-5 bg-[#eee] transition-all z-50`}>
+        <div className={`${open ? " scale-100 opacity-100": "scale-0 opacity-0"} fixed w-10/12 max-[991px]:w-full max-[991px]:h-full top-1/2 left-1/2 rounded-[8px] -translate-1/2 p-5 bg-[#eee] transition-all z-50`}>
             <IoIosCloseCircle onClick={() => setOpen(!open)} className="z-50 text-4xl absolute top-6 right-6 cursor-pointer transition-all hover:opacity-85"/>
             <form onSubmit={addTask} className="pt-20 pb-16 px-2.5 text-center">
                 <h4 className="uppercase mb-3.5 font-semibold text-2xl text-[#333]"><span className="text-blue-400">Add</span> New Task</h4>
@@ -97,7 +95,7 @@ export default function AddTaks({open, setOpen}) {
                     <div className="flex justify-between items-center gap-1.5 max-[991px]:flex-col">
                     <input 
                     className="bg-white p-2.5 w-full transition-all rounded-[6px] outline-none border-blue-300 focus:border-blue-400 border-[3px]" 
-                    type="text" 
+                    type="time" 
                     id="timeTask" 
                     name="timeTask"
                     placeholder="Time Task"
@@ -126,19 +124,6 @@ export default function AddTaks({open, setOpen}) {
                     value={task.typeTask}
                     onChange={handleChange}/>
                 </div>
-
-                <div className="mb-3 relative w-full">
-                    <label htmlFor="ColorTask" className="block text-left">Color Task</label>
-                    <input 
-                    className="bg-white p-2.5 w-full transition-all rounded-[6px] outline-none border-blue-300 focus:border-blue-400 border-[3px]" 
-                    type="text" 
-                    id="ColorTask"
-                    name="colorTask"
-                    placeholder="Color Task"
-                    value={task.colorTask}
-                    onChange={handleChange}/>
-                </div>
-
                 <button type="submit" className="py-2.5 px-6 cursor-pointer text-center text-white bg-blue-400 rounded-[6px] border-none hover:bg-blue-300 transition-all">Add Task</button>
                 {error ? (<p className={`text-red-500 font-semibold p-2 mt-2`}>{error}</p>) : ""}
             </form>
