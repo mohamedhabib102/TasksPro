@@ -4,6 +4,7 @@ import { MdAdd } from "react-icons/md";
 import { GiGoalKeeper } from "react-icons/gi";
 import {useEffect, useState } from "react";
 import { MdEdit } from "react-icons/md";
+import Auth from "./Auth";
 
 
 
@@ -16,26 +17,31 @@ export default function ControlProfile(){
     const [isDisabled, setIsDisabled] = useState(true);
     const [profileImage, setProfileImage] = useState(null);
     const [messageUser, setMessageUser] = useState("");
+    const [auth, setAuth] = useState(false);
+    const [user, setUser] = useState({})
 
 
-    useEffect(() => {
-        const storedName = localStorage.getItem("User");
+      useEffect(() => {
+        const storedUser = localStorage.getItem("User");
         const storedImage = localStorage.getItem("profileImage");
-
-
-         console.log(name);
-        if (storedImage) {  
-            const parsedImage = storedImage;
-            if (parsedImage) {
-                setProfileImage(parsedImage);
-            }
+      
+      
+        if (storedImage) {
+          setProfileImage(storedImage);
         }
-
-        if (storedName) {
-            const parsedName = JSON.parse(storedName);
-            setName(parsedName.firstName + " " + parsedName.lastName)
+      
+      
+        if (storedUser) {
+          const parsed = JSON.parse(storedUser);
+          setUser(parsed);
+          setName(`${parsed.firstName} ${parsed.lastName}`);
+        } else {
+          setUser({});
+          setName("");
         }
-    }, [])
+      }, [auth, user.firstName]);
+
+
 
 
 
@@ -61,6 +67,7 @@ export default function ControlProfile(){
         };
     
         localStorage.setItem("User", JSON.stringify(user));
+        setUser(user);
         setName(user.firstName + " " + user.lastName);
         setIsDisabled(true);
         setMessageUser("Name updated successfully!");
@@ -90,7 +97,19 @@ export default function ControlProfile(){
         }, 3000)
      }
 
+       const logout = ()=> {
+        localStorage.removeItem("User")
+        setUser({})
+        setName("")
+        setProfileImage(null);
+        localStorage.removeItem("profileImage");
+        setMessageUser("You have logged out successfully!");
+        handelMessageUser();
+      }
+
     return (
+        <>
+        <Auth auth={auth} setAuth={setAuth} setUser={setUser}/>
         <div className="">
             <p className={`${messageUser ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-12"} transition duration-200 absolute left-1/2 -translate-x-1/2 z-20
             bg-blue-400 p-3 rounded-2xl text-white lg:text-lg text-sm text-center font-semibold`}>{messageUser ? messageUser : ""}</p>
@@ -98,7 +117,7 @@ export default function ControlProfile(){
                 <div className="flex lg:items-center text-start flex-row lg:gap-5 gap-3 w-full">
                 <div className="relative lg:w-fit">
                    <img 
-                    src={profileImage || "/assets/default-image.jpg"} 
+                    src={profileImage ? profileImage : "/assets/default-image.jpg"} 
                     alt="profile" 
                     title="your profile"
                     className="lg:w-36 w-[90px] rounded-2xl"
@@ -117,7 +136,7 @@ export default function ControlProfile(){
                 </div>
                   <div className="w-1/2">
                         <h3 className="lg:text-3xl text-lg text-[#333] font-bold">Welcome</h3>
-                        <p className="lg:text-lg text-sm font-semibold text-blue-500 break-words">{name}</p>
+                        <p className="lg:text-lg text-sm font-semibold text-blue-500 break-words">{user ? `${name}` : "Guest"}</p>
                   </div>
                 </div>
 
@@ -126,12 +145,13 @@ export default function ControlProfile(){
                 </div>
             </div>
 
-            <form>
+              { user.firstName ? (
+                            <form>
                 <div className="relative">
                   <input
                     type="text"
                     placeholder="Edit Your Name"
-                    value={name || ""}
+                    value={name ? name : "Guest"}
                     name="name"
                     onChange={(e) => setName(e.target.value)}
                     className={`${isDisabled ? "bg-blue-100 opacity-85" : "bg-blue-300 opacity-100"}  w-full p-3 rounded-lg mt-5 text-[#333] outline-none font-semibold`}
@@ -151,6 +171,16 @@ export default function ControlProfile(){
                   }}  size={25} className="absolute top-1/2 -translate-x-1/2 right-3 cursor-pointer transition hover:text-blue-400"/>
                 </div>
             </form>
+              ) : ""}
+            <button className="mt-4 p-2 w-32 max-[992px]:w-fit bg-blue-500 text-white transition-all hover:bg-blue-400 rounded-2xl cursor-pointer" 
+            onClick={() => {
+              if (!user.firstName){
+                setAuth(!auth) 
+              } else {
+                  logout() 
+              }
+            }}>{user.firstName ? "Logout" : "Login"}</button>
         </div>
+        </>
     )
 }
