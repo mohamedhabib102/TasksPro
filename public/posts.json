@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "post",
+        "post": "You can be everything,  بإمكانك تكون ما تريد 🤷",
+        "type": "Tasks Pro",
+        "sucss": false
+    }, 
+    {
+        "id": 2,
+        "name": "post",
+        "post": " فاصبر صبرا جميلا💙💙🌿 ",
+        "type": "Tasks Pro",
+        "sucss": false
+    }, 
+    {
+        "id": 3,
+        "name": "post",
+        "post": " ديما خلي عندك يقين إن ربنا مش هيضيع تعبك مهما حصل. ",
+        "type": "Tasks Pro",
+        "sucss": false
+    },
+    {
+        "id": 4,
+        "name": "post",
+        "post": "  ها استوعبت ولا اوعيك تاني ان ربنا قادر على كل شئ فلا تيأس يصديقي.",
+        "type": "Tasks Pro",
+        "sucss": false
+    }, 
+    {
+        "id": 5,
+        "name": "post",
+        "post": " خليك عارف إن المستحيل حقيقه بوجود ربنا معاك💙.",
+        "type": "Tasks Pro",
+        "sucss": false
+    }, 
+    {
+        "id": 6,
+        "name": "post",
+        "post": " ساعد نفسك بنفسك عشان محدش هينفعك بربع جنيه",
+        "type": "Tasks Pro" ,
+        "sucss": false   
+    }, 
+    {
+        "id": 7,
+        "name": "post",
+        "post": " ستغل الوقت ف الحاجه المفيده استغله ف إنك تطور نفسك مش إنك تضيع نفسك. ",
+        "type": "Tasks Pro",
+        "sucss": false
+    },
+    {
+        "id": 8,
+        "name": "vioce",
+        "type": "Dupamicaffeine",
+        "vioce": "./assets/Dupamicaffeine-1.mp3",
+        "sucss": false
+    },
+    {
+        "id": 9,
+        "name": "vioce",
+        "type": "Dupamicaffeine",
+        "vioce": "./assets/Dupamicaffeine-2.mp3",
+        "sucss": false
+    },
+    {
+        "id": 10,
+        "name": "vioce",
+        "type": "Al Da7ee7",
+        "vioce": "./assets/Da7ee7.mp3" ,
+        "sucss": false
+    }
+]
