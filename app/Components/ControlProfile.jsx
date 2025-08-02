@@ -136,7 +136,7 @@ export default function ControlProfile(){
                 </div>
                   <div className="w-1/2">
                         <h3 className="lg:text-3xl text-lg text-[#333] font-bold">Welcome</h3>
-                        <p className="lg:text-lg text-sm font-semibold text-blue-500 break-words">{user ? `${name}` : "Guest"}</p>
+                        <p className="lg:text-lg text-sm font-semibold text-blue-500 break-words">{name ? `${name}` : "Guest"}</p>
                   </div>
                 </div>
 
