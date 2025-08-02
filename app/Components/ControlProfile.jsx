@@ -96,7 +96,7 @@ export default function ControlProfile(){
             bg-blue-400 p-3 rounded-2xl text-white lg:text-lg text-sm text-center font-semibold`}>{messageUser ? messageUser : ""}</p>
             <div className="flex lg:flex-row flex-col justify-between items-center bg-blue-300 rounded-lg p-3.5">
                 <div className="flex lg:items-center text-start flex-row lg:gap-5 gap-3 w-full">
-                <div className="group relative lg:w-fit">
+                <div className="relative lg:w-fit">
                    <img 
                     src={profileImage || "/assets/default-image.jpg"} 
                     alt="profile" 
@@ -110,7 +110,7 @@ export default function ControlProfile(){
                      accept="image/*"
                      onChange={handleImageUpload}
                      />
-                    <label htmlFor="imageUpload" className="text-white opacity-0 transition group-hover:opacity-100 text-4xl bg-blue-500 lg:w-[25px] lg:h-[25px] w-[18px] h-[18px] flex justify-center items-center cursor-pointer rounded-sm absolute top-2.5 right-2.5">
+                    <label htmlFor="imageUpload" className="text-white  transition  text-4xl bg-blue-500 lg:w-[25px] lg:h-[25px] w-[18px] h-[18px] flex justify-center items-center cursor-pointer rounded-sm absolute top-2.5 right-2.5">
 
                     <MdAdd />
                     </label>
