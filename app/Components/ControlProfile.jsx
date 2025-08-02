@@ -87,7 +87,7 @@ export default function ControlProfile(){
      const handelMessageUser = () => {
         setTimeout(() => {
             setMessageUser("");
-        }, 2300)
+        }, 3000)
      }
 
     return (
