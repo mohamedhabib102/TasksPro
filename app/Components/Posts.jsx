@@ -58,7 +58,7 @@ export default function Posts() {
 
     return (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-            <p className={`${message ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-12"} transition duration-200 absolute left-1/2 -translate-x-1/2 z-20
+            <p className={`${message ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-12"} transition duration-200 fixed left-1/2 -translate-x-1/2 z-20
             bg-blue-400 p-3 rounded-2xl text-white lg:text-lg text-sm text-center font-semibold`}>{message ? message : ""}</p>
             {post.map((ele, index) => (
                 <div className="relative p-3.5 rounded-[10px] border-[3px] border-[#fff] bg-[#f2f2f2] outline-[3px] outline-[#eee]" key={ele.id}>

@@ -40,7 +40,7 @@ const { useState, useEffect } = require("react")
     }
     return (
         <section className="">
-            <p className={`${message ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-12"} z-50 transition duration-200 absolute left-1/2 -translate-x-1/2 z-20
+            <p className={`${message ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-12"} z-50 transition duration-200 fixed left-1/2 -translate-x-1/2
             bg-blue-400 p-3 rounded-2xl text-white lg:text-lg text-sm text-center font-semibold`}>{message ? message : ""}</p>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
                 {posts.map((ele) => (
