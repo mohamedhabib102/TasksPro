@@ -1,3 +1,5 @@
+import WhishList from "../Components/WishList";
+
 export default function Favorite() {
     return(
         <div className="p-3 bg-[#fff] rounded-xs relative">
@@ -6,6 +8,7 @@ export default function Favorite() {
           <span className="absolute h-[3px] w-[40] -bottom-2.5 bg-[#333] left-0"></span>
           Favorite
         </h1>
+        <WhishList />
         </div>
     )
 }
