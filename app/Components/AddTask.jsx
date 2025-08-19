@@ -5,27 +5,51 @@ export default function AddTaks({open, setOpen}) {
     const [task, setTask] = useState({
         nameTask: "",
         descriptionTask: "",
-        timeTask: "",
-        time:  "",
+        timeTaskIsDone: "",
+        time: "",
         typeTask: "",
         progress: 20,
         isDone: false,
+        timeTaskNow: new Date().toDateString()
     })
     const [error, setError] =  useState("")
+    const [errorTime, setErrotTiem] = useState("");
 
     const handleChange = (e) => {
         const {name, value} = e.target;
         setTask(prev => ({...prev, [name]: value}))
     }
 
+
+    
     const addTask = (e) => {
         e.preventDefault();
+        const dateNow =  new Date().toLocaleDateString();
+        const convertTimeTask = task.timeTaskIsDone;
 
-        if (!task.nameTask || !task.descriptionTask || !task.timeTask || !task.typeTask || !task.time){
+        const currentTimeTask = new Date(convertTimeTask).toLocaleDateString();
+
+        
+
+        if (!task.nameTask || !task.descriptionTask || !task.typeTask || !task.timeTaskIsDone || !task.time){
             setError("You Should Fill Inputs Before Add New Task!")
             return
         }
         setError("")
+
+       
+
+        if (dateNow.trim() > currentTimeTask.trim()){
+            setErrotTiem("This time is incorrect!!")
+            console.log("task"+task.timeTaskIsDone);
+            console.log("now"+dateNow);
+            console.log("cur"+currentTimeTask);
+            
+            
+            
+            return;
+        }
+        setErrotTiem("")
 
         // Svaed Task
         const savedTasks =  JSON.parse(localStorage.getItem("tasksPro")) || [];
@@ -46,11 +70,12 @@ export default function AddTaks({open, setOpen}) {
         setTask({
             nameTask: "",
             descriptionTask: "",
-            timeTask: "",
+            timeTaskIsDone: "",
             time: "",
             typeTask: "",
             progress: 20,
             isDone: false,
+            timeTaskNow: new Date().toDateString()
         })
 
 
@@ -89,30 +114,6 @@ export default function AddTaks({open, setOpen}) {
                     value={task.descriptionTask}
                     onChange={handleChange}/>
                 </div>
-
-                <div className="mb-3 relative w-full">
-                    <label htmlFor="timeTask" className="block text-left">Time Task</label>
-                    <div className="flex justify-between items-center gap-1.5 max-[991px]:flex-col">
-                    <input 
-                    className="bg-white p-2.5 w-full transition-all rounded-[6px] outline-none border-blue-300 focus:border-blue-400 border-[3px]" 
-                    type="time" 
-                    id="timeTask" 
-                    name="timeTask"
-                    placeholder="Time Task"
-                    value={task.timeTask}
-                    onChange={handleChange}
-                    />
-                    <input 
-                    type="text"
-                    name="time"
-                    className="bg-white p-2.5 w-[47%] max-[991px]:w-full transition-all rounded-[6px] outline-none border-blue-300 focus:border-blue-400 border-[3px]"
-                    placeholder="PM or AM" 
-                    value={task.time}
-                    onChange={handleChange}
-                    />
-                    </div>
-                </div>
-
                 <div className="mb-3 relative w-full">
                     <label htmlFor="typeTask" className="block text-left">Type Task</label>
                     <input 
@@ -124,8 +125,31 @@ export default function AddTaks({open, setOpen}) {
                     value={task.typeTask}
                     onChange={handleChange}/>
                 </div>
+                <div className="mb-3 relative w-full">
+                    <label htmlFor="typeTask" className="block text-left">Date Task</label>
+                    <input 
+                    className="bg-white p-2.5 w-full transition-all rounded-[6px] outline-none border-blue-300 focus:border-blue-400 border-[3px]" 
+                    type="date" 
+                    id="typeTask"
+                    name="timeTaskIsDone"
+                    placeholder="Type Task"
+                    value={task.timeTaskIsDone}
+                    onChange={handleChange}/>
+                </div>
+                <div className="mb-3 relative w-full">
+                    <label htmlFor="descriptionTask" className="block text-left">Time Task</label>
+                    <input 
+                    className="bg-white p-2.5 w-full transition-all rounded-[6px] outline-none border-blue-300 focus:border-blue-400 border-[3px]" 
+                    type="time" 
+                    id="time" 
+                    name="time"
+                    placeholder="Description Task"
+                    value={task.time}
+                    onChange={handleChange}/>
+                </div>
                 <button type="submit" className="py-2.5 px-6 cursor-pointer text-center text-white bg-blue-400 rounded-[6px] border-none hover:bg-blue-300 transition-all">Add Task</button>
                 {error ? (<p className={`text-red-500 font-semibold p-2 mt-2`}>{error}</p>) : ""}
+                {errorTime ? (<p className={`text-red-500 font-semibold p-2 mt-2`}>{errorTime}</p>) : ""}
             </form>
         </div>
         </>
